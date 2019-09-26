@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import devmasterteam.com.R
+import devmasterteam.com.mock.Mock
 import devmasterteam.com.util.MotivationConstants
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     // declaracao inicial da variavel trazendo o all
     private var mFilter = MotivationConstants.PHRASE_FILTER.ALL
+    private val mMock = Mock()
 
     //cria a primeira tela.
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         //Inicializa
         handleFilter(R.id.imageAll)
+        refreshPhrase()
     }
 
     /**
@@ -44,18 +47,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val listID = listOf(R.id.imageAll, R.id.imageHappy, R.id.imageSun)
         if (id in listID) {
             handleFilter(id)
-        } else {
+        } else if (id == R.id.buttonNewPhrase) {
             refreshPhrase()
         }
 
     }
 
+    // fara o filtro dos itens pressionados
     private fun handleFilter(id: Int?) {
 
         imageSun.setImageResource(R.drawable.ic_sun_unselected)
         imageAll.setImageResource(R.drawable.ic_all_unselected)
         imageHappy.setImageResource(R.drawable.ic_happy_unselected)
 
+        //sera feito o efeito de clique dos itens
         if (id == R.id.imageAll) {
             mFilter = MotivationConstants.PHRASE_FILTER.ALL
             imageAll.setImageResource(R.drawable.ic_all_selected)
@@ -68,8 +73,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    /**
+     * Metodo que vai trazer uma nova frase
+     */
     private fun refreshPhrase() {
-
+        textPhrase.text = mMock.getPhrase((mFilter))
     }
 
 
