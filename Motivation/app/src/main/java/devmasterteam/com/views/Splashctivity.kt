@@ -34,6 +34,8 @@ class Splashctivity : AppCompatActivity(), View.OnClickListener {
 
         //evento de click
         buttonSave.setOnClickListener(this)
+
+        //verifica o nome do usuario
         verifyUserName()
     }
 
@@ -58,6 +60,7 @@ class Splashctivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    //Funcao que vai verificar o nome do usuario que esta logado
     private fun verifyUserName() {
         editName.setText(mSecurity.getStoredString((MotivationConstants.KEY.PERSON_NAME)))
     }

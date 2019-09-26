@@ -13,7 +13,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     // declaracao inicial da variavel trazendo o all
     private var mFilter = MotivationConstants.PHRASE_FILTER.ALL
+    //faz a instancia tardia do securityPreferencas
     private lateinit var mSecurityPreferences: SecurityPreferences
+
     private val mMock = Mock()
 
     //cria a primeira tela.
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //faz a instancia de um novo contexto
         mSecurityPreferences = SecurityPreferences(this)
 
         /**
@@ -30,7 +33,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         //Inicializa
         handleFilter(R.id.imageAll)
+        // da um refresh na frase
         refreshPhrase()
+        //traz o nome do usuario do outro local
         verifyUsername()
     }
 
@@ -73,12 +78,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //sera feito o efeito de clique dos itens
         if (id == R.id.imageAll) {
             mFilter = MotivationConstants.PHRASE_FILTER.ALL
+            textPhrase.text = mMock.getPhrase((mFilter))
             imageAll.setImageResource(R.drawable.ic_all_selected)
         } else if (id == R.id.imageHappy) {
             mFilter = MotivationConstants.PHRASE_FILTER.HAPPY
+            textPhrase.text = mMock.getPhrase((mFilter))
             imageHappy.setImageResource(R.drawable.ic_happy_selected)
         } else if (id == R.id.imageSun) {
             mFilter = MotivationConstants.PHRASE_FILTER.SUN
+            textPhrase.text = mMock.getPhrase((mFilter))
             imageSun.setImageResource(R.drawable.ic_sun_selected)
         }
     }
