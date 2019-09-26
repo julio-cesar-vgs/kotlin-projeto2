@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //faz a instancia de um novo contexto
+        //agora ele consegue trazer a instancia de um securityPreferences
         mSecurityPreferences = SecurityPreferences(this)
 
         /**
