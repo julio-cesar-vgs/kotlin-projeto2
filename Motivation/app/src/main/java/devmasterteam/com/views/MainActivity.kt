@@ -1,7 +1,8 @@
-package devmasterteam.com
+package devmasterteam.com.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import devmasterteam.com.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,5 +11,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    
+
 }

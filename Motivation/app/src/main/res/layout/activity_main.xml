@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".views.MainActivity">
 
     <LinearLayout
         android:id="@+id/linearMenuFilter"
@@ -20,7 +20,7 @@
 
         <ImageView
             android:id="@+id/imageAll"
-            android:layout_width="115dp"
+            android:layout_width="143dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_all_selected"
             tools:layout_conversion_absoluteHeight="35dp"
@@ -30,7 +30,7 @@
 
         <ImageView
             android:id="@+id/imageSun"
-            android:layout_width="72dp"
+            android:layout_width="129dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_sun_unselected"
             tools:layout_conversion_absoluteHeight="35dp"
@@ -40,7 +40,7 @@
 
         <ImageView
             android:id="@+id/imageHappy"
-            android:layout_width="95dp"
+            android:layout_width="131dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_happy_unselected"
             tools:layout_conversion_absoluteHeight="35dp"
@@ -55,25 +55,16 @@
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
         android:text="Usuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearMenuFilter" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="128dp" />
 
     <TextView
         android:id="@+id/textPhrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="48dp"
         android:text="Phrase"
-        app:layout_constraintEnd_toStartOf="@+id/userName"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearMenuFilter" />
 
@@ -81,10 +72,10 @@
         android:id="@+id/newPhrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:text="Gerar Frase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textPhrase" />
+        tools:layout_editor_absoluteY="174dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

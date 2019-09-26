@@ -22,7 +22,7 @@ class SecurityPreferences(context: Context) {
 
 
     // funcao que vai recuperar as informacoes passadas para o usuario
-    fun getStoredString(key: String, value: String?): String {
+    fun getStoredString(key: String): String {
         return mSharedPreferences.getString(key, "") ?: ""
     }
 }
