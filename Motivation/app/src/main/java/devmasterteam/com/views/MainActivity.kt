@@ -6,18 +6,22 @@ import androidx.appcompat.app.AppCompatActivity
 import devmasterteam.com.R
 import devmasterteam.com.mock.Mock
 import devmasterteam.com.util.MotivationConstants
+import devmasterteam.com.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     // declaracao inicial da variavel trazendo o all
     private var mFilter = MotivationConstants.PHRASE_FILTER.ALL
+    private lateinit var mSecurityPreferences: SecurityPreferences
     private val mMock = Mock()
 
     //cria a primeira tela.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        mSecurityPreferences = SecurityPreferences(this)
 
         /**
          * setta o evento
@@ -27,6 +31,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //Inicializa
         handleFilter(R.id.imageAll)
         refreshPhrase()
+        verifyUsername()
+    }
+
+    private fun verifyUsername() {
+        textUserName.text =
+            mSecurityPreferences.getStoredString(MotivationConstants.KEY.PERSON_NAME)
     }
 
     /**

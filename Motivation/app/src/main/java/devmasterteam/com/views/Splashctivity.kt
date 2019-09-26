@@ -34,8 +34,8 @@ class Splashctivity : AppCompatActivity(), View.OnClickListener {
 
         //evento de click
         buttonSave.setOnClickListener(this)
+        verifyUserName()
     }
-
 
     // funcao que fara o save das informacoes.
     private fun handleSave() {
@@ -56,5 +56,9 @@ class Splashctivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
 
         }
+    }
+
+    private fun verifyUserName() {
+        editName.setText(mSecurity.getStoredString((MotivationConstants.KEY.PERSON_NAME)))
     }
 }
