@@ -9,17 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".views.Splashctivity"
-            android:theme="@style/Theme.AppCompat.Light.FullScreen">
+            android:theme="@style/Theme.AppCompat.Light.FullScreen"></activity>
+        <activity
+            android:name=".views.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".views.SpotActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".views.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 </manifest>
